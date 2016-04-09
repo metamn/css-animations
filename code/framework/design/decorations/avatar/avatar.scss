@@ -1,0 +1,10 @@
+@mixin avatar($size: $lem * 2, $color-scheme: white-on-black) {
+  .avatar__image,
+  .avatar__initiale {
+    @include circle($size);
+  }
+
+  .avatar__initiale {
+    @include colors($color-scheme);
+  }
+}

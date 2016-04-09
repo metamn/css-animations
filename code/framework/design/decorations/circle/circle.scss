@@ -1,0 +1,9 @@
+@mixin circle($width) {
+  width: $width;
+  height: $width;
+  border-radius: $width / 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

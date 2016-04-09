@@ -1,0 +1,25 @@
+{
+  "url": "/",
+  "urlx": "http://metamn.io/cssa/",
+  "title": "CSS Animations",
+  "description": "Playing with CSS Animations",
+  "images": "assets/images/",
+  "scripts": "assets/scripts/",
+  "styles": "assets/styles/",
+  "javascripts": {
+    "header": [
+      {
+        "file": "https://use.typekit.net/syb1owt.js",
+        "type": "external"
+      },
+      {
+        "file": "vendors.js"
+      }
+    ],
+    "footer": [
+      {
+        "file": "site.footer.min.js"
+      }
+    ]
+  }
+}
