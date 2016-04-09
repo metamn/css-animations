@@ -3,7 +3,11 @@
 
   &__border {
     @include border;
-    @include animation(line-draw, 3s);
+
+    animation-name: line-draw;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    animation-fill-mode: forwards;
   }
 }
 

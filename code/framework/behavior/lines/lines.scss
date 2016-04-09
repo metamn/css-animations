@@ -1,0 +1,22 @@
+@mixin lines($count, $direction: horizontal, $rotate: 0deg) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .line {
+    @include line;
+    align-items: center;
+  }
+
+  @if ($direction == horizontal) {
+    @include lines--horizontal($count);
+  }
+
+  @if ($direction == vertical) {
+    @include lines--vertical($count);
+  }
+
+  @if ($rotate != 0deg) {
+    transform: rotate($rotate);
+  }
+}

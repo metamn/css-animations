@@ -1,0 +1,5 @@
+@mixin lines--vertical($count) {
+  .line {
+    height: calc(100vw / #{$count + 1});
+  }
+}

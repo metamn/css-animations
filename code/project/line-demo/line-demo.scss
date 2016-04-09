@@ -1,5 +1,3 @@
 @mixin line-demo {
-  .line {
-    @include line;
-  }
+  @include lines(20, vertical, -45deg);
 }

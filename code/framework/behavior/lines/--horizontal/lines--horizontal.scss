@@ -1,0 +1,5 @@
+@mixin lines--horizontal($count) {
+  .line {
+    height: calc(100vh / #{$count + 1});
+  }
+}
