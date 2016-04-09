@@ -14,11 +14,23 @@
     top: 0;
     left: 0;
     z-index: 1;
+
+    .line {
+      animation-duration: 3s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-fill-mode: none;
+      animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    }
   }
 
   .line-demo--horizontal {
     .lines {
       @include lines(20);
+
+      .line {
+        animation-name: rotate-line;
+      }
     }
   }
 
@@ -27,6 +39,31 @@
 
     .lines {
       @include lines(30, vertical);
+
+      .line {
+        animation-name: skew-line;
+      }
     }
+  }
+}
+
+
+@include keyframes(skew-line) {
+  from {
+    transform: skew(-5deg);
+  }
+
+  to {
+    transform: skew(5deg);
+  }
+}
+
+@include keyframes(rotate-line) {
+  from {
+    transform: rotate(-5deg);
+  }
+
+  to {
+    transform: rotate(5deg);
   }
 }
