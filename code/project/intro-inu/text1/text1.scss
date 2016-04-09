@@ -3,13 +3,12 @@
   flex-direction: column;
   justify-content: space-around;
 
-  @include colors(green-on-blue);
-  background: transparent;
-
   @include text1--skewed;
+
   $duration: 1s;
 
-
+  @include colors(green-on-blue);
+  background: transparent;
 
   .line {
     display: flex;
@@ -24,6 +23,7 @@
     &__text {
       @include text-style(title);
       @include scale(large-1);
+      //font-weight: bold;
 
       transform: translateX(500%);
 
