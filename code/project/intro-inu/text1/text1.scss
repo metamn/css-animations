@@ -1,1 +1,48 @@
-@mixin text1 {}
+@mixin text1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @include colors(green-on-blue);
+  background: transparent;
+  
+  @include text1--skewed;
+  $duration: 3s;
+
+
+
+  .line {
+    display: flex;
+
+    &__text {
+      display: none;
+    }
+
+    &__border {
+      @include border;
+
+      animation-name: line-draw-horizontal;
+      animation-duration: $duration;
+      animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+      animation-fill-mode: forwards;
+    }
+
+    &--2 {
+      .line__border {
+        animation-delay: $duration;
+      }
+    }
+
+    &--3 {
+      .line__border {
+        animation-delay: $duration * 2;
+      }
+    }
+
+    &--4 {
+      .line__border {
+        animation-delay: $duration * 3;
+      }
+    }
+  }
+}
