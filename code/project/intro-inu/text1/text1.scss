@@ -5,21 +5,37 @@
 
   @include colors(green-on-blue);
   background: transparent;
-  
+
   @include text1--skewed;
-  $duration: 3s;
+  $duration: 1s;
 
 
 
   .line {
     display: flex;
+    flex-wrap: wrap;
+
+    &__text,
+    &__border {
+      flex-basis: 100%;
+    }
+
 
     &__text {
-      display: none;
+      @include text-style(title);
+      @include scale(large-1);
+
+      transform: translateX(500%);
+
+      animation-name: text-slide-in;
+      animation-duration: $duration;
+      animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+      animation-fill-mode: forwards;
     }
 
     &__border {
       @include border;
+      flex-basis: 0;
 
       animation-name: line-draw-horizontal;
       animation-duration: $duration;
@@ -27,9 +43,19 @@
       animation-fill-mode: forwards;
     }
 
+    &--1 {
+      .line__text {
+        animation-delay: $duration * 4;
+      }
+    }
+
     &--2 {
       .line__border {
         animation-delay: $duration;
+      }
+
+      .line__text {
+        animation-delay: $duration * 5;
       }
     }
 
@@ -37,12 +63,31 @@
       .line__border {
         animation-delay: $duration * 2;
       }
+
+      .line__text {
+        animation-delay: $duration * 6;
+      }
     }
 
     &--4 {
       .line__border {
         animation-delay: $duration * 3;
       }
+
+      .line__text {
+        animation-delay: $duration * 7;
+      }
     }
+  }
+}
+
+
+@include keyframes(text-slide-in) {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
   }
 }

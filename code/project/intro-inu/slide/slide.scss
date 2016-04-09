@@ -15,6 +15,11 @@
     height: 100%;
   }
 
+  .text1,
+  .text2 {
+    width: 120%;
+  }
+
   .figure {
     @include figure;
   }
