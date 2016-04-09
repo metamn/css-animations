@@ -1,22 +1,17 @@
-@mixin line {
+@mixin line($direction) {
   display: flex;
 
   &__border {
-    @include border;
-
-    animation-name: line-draw;
     animation-duration: 3s;
     animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
     animation-fill-mode: forwards;
   }
-}
 
-@include keyframes(line-draw) {
-  from {
-    flex-basis: 0%;
+  @if ($direction == vertical) {
+    @include line--vertical;
   }
 
-  to {
-    flex-basis: 100%;
+  @if ($direction == horizontal) {
+    @include line--horizontal;
   }
 }

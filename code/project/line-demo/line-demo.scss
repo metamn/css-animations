@@ -1,3 +1,32 @@
 @mixin line-demo {
-  @include lines(20, vertical, -45deg);
+  width: calc(100vw - #{$lem * 2});
+  height: calc(100vh - #{$lem * 2});
+  overflow: hidden;
+
+  position: relative;
+
+  .line-demo--horizontal,
+  .line-demo--vertical {
+    width: calc(100vw - #{$lem * 2});
+    height: calc(100vh - #{$lem * 2});
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .line-demo--horizontal {
+    .lines {
+      @include lines(20);
+    }
+  }
+
+  .line-demo--vertical {
+    z-index: 2;
+
+    .lines {
+      @include lines(30, vertical);
+    }
+  }
 }
