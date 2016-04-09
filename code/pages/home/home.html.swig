@@ -1,6 +1,6 @@
 {% extends '../../framework/templates/default/default.html.swig' %}
 {% block content %}
 
-  h
+  {% include '../../project/line-demo/line-demo.html.swig' %}
 
 {% endblock %}

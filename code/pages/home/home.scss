@@ -6,7 +6,11 @@
 html {
   &.home {
     body {
+      padding: $lem;
       
+      .line-demo {
+        @include line-demo;
+      }
     }
   }
 }

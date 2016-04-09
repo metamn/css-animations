@@ -1,0 +1,18 @@
+@mixin line {
+  display: flex;
+
+  &__border {
+    @include border;
+    @include animation(line-draw, 3s);
+  }
+}
+
+@include keyframes(line-draw) {
+  from {
+    flex-basis: 0%;
+  }
+
+  to {
+    flex-basis: 100%;
+  }
+}
