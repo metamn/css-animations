@@ -6,8 +6,10 @@
 html {
   &.home {
     body {
-      padding: $lem;
-      
+      .intro-inu {
+        @include intro-inu;
+      }
+
       .line-demo {
         @include line-demo;
       }

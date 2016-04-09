@@ -1,0 +1,26 @@
+@mixin slide {
+  position: relative;
+  width: 960px;
+  height: 720px;
+
+  .figure,
+  .text1,
+  .text2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .figure {
+    @include figure;
+  }
+
+  .text1 {
+    @include text1;
+  }
+
+  .text2 {
+    @include text2;
+  }
+}

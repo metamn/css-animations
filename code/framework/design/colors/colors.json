@@ -6,33 +6,41 @@
       "description": "Main color"
     },
     {
-      "name": "black",
-      "value": "#000",
+      "name": "blue",
+      "value": "#4916DA",
       "description": "Main color"
     },
     {
+      "name": "green",
+      "value": "#2EFD83",
+      "description": "Secondary color"
+    },
+    {
       "name": "gray",
-      "value": "mix($white, $black)",
-      "description": "Secondary color"
-    },
-    {
-      "name": "lightgray",
-      "value": "mix($white, $black, 75%)",
-      "description": "Secondary color"
-    },
-    {
-      "name": "darkgray",
-      "value": "mix($white, $black, 25%)",
+      "value": "#f1f1f1",
       "description": "Secondary color"
     }
   ],
   "color_pairs": [
     {
-      "name": "black-on-white",
+      "name": "white-on-blue",
       "properties": [
         {
           "name": "color",
-          "value": "$black"
+          "value": "$white"
+        },
+        {
+          "name": "background-color",
+          "value": "$blue"
+        }
+      ]
+    },
+    {
+      "name": "blue-on-white",
+      "properties": [
+        {
+          "name": "color",
+          "value": "$blue"
         },
         {
           "name": "background-color",
@@ -41,20 +49,7 @@
       ]
     },
     {
-      "name": "white-on-black",
-      "properties": [
-        {
-          "name": "color",
-          "value": "$white"
-        },
-        {
-          "name": "background-color",
-          "value": "$black"
-        }
-      ]
-    },
-    {
-      "name": "gray-on-white",
+      "name": "gray-on-blue",
       "properties": [
         {
           "name": "color",
@@ -62,34 +57,20 @@
         },
         {
           "name": "background-color",
-          "value": "$white"
-        }
-      ],
-      "contrast": "3.9, bold: 14pt (large 1), normal: 18pt (large 3)"
-    },
-    {
-      "name": "lightgray-on-white",
-      "properties": [
-        {
-          "name": "color",
-          "value": "$lightgray"
-        },
-        {
-          "name": "background-color",
-          "value": "$white"
+          "value": "$blue"
         }
       ]
     },
     {
-      "name": "darkgray-on-white",
+      "name": "green-on-blue",
       "properties": [
         {
           "name": "color",
-          "value": "$darkgray"
+          "value": "$green"
         },
         {
           "name": "background-color",
-          "value": "$white"
+          "value": "$blue"
         }
       ]
     }

@@ -10,52 +10,42 @@
 $white: #fff;
 
 // Main color
-$black: #000;
+$blue: #4916DA;
 
 // Secondary color
-$gray: mix($white, $black);
+$green: #2EFD83;
 
 // Secondary color
-$lightgray: mix($white, $black, 75%);
-
-// Secondary color
-$darkgray: mix($white, $black, 25%);
+$gray: #f1f1f1;
 
 
 // Color combinations. Colors are not used standalone but in pairs
 @mixin colors($name) {
 
-  @if ($name == 'black-on-white') {
-    color: $black;
-    background-color: $white;
-    
-    
-  }
-
-  @if ($name == 'white-on-black') {
+  @if ($name == 'white-on-blue') {
     color: $white;
-    background-color: $black;
+    background-color: $blue;
     
     
   }
 
-  @if ($name == 'gray-on-white') {
+  @if ($name == 'blue-on-white') {
+    color: $blue;
+    background-color: $white;
+    
+    
+  }
+
+  @if ($name == 'gray-on-blue') {
     color: $gray;
-    background-color: $white;
+    background-color: $blue;
     
     
   }
 
-  @if ($name == 'lightgray-on-white') {
-    color: $lightgray;
-    background-color: $white;
-    
-    
-  }
-
-  @if ($name == 'darkgray-on-white') {
-    color: $darkgray;
-    background-color: $white;
+  @if ($name == 'green-on-blue') {
+    color: $green;
+    background-color: $blue;
     
     
   }
@@ -68,56 +58,45 @@ $darkgray: mix($white, $black, 25%);
   background: #fff;
 };
 
-.black {
-  background: #000;
+.blue {
+  background: #4916DA;
+};
+
+.green {
+  background: #2EFD83;
 };
 
 .gray {
-  background: mix($white, $black);
-};
-
-.lightgray {
-  background: mix($white, $black, 75%);
-};
-
-.darkgray {
-  background: mix($white, $black, 25%);
+  background: #f1f1f1;
 };
 
 
 // Color pair classes
 
-.black-on-white {
-  color: $black;
-  background-color: $white;
-  
-  
-}
-
-.white-on-black {
+.white-on-blue {
   color: $white;
-  background-color: $black;
+  background-color: $blue;
   
   
 }
 
-.gray-on-white {
+.blue-on-white {
+  color: $blue;
+  background-color: $white;
+  
+  
+}
+
+.gray-on-blue {
   color: $gray;
-  background-color: $white;
+  background-color: $blue;
   
   
 }
 
-.lightgray-on-white {
-  color: $lightgray;
-  background-color: $white;
-  
-  
-}
-
-.darkgray-on-white {
-  color: $darkgray;
-  background-color: $white;
+.green-on-blue {
+  color: $green;
+  background-color: $blue;
   
   
 }

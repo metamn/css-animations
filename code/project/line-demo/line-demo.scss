@@ -5,6 +5,16 @@
 
   position: relative;
 
+  // - this animations slows down the computer
+  // - also disables the other, line animations
+  //animation-name: scale-lines;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+
+
   .line-demo--horizontal,
   .line-demo--vertical {
     width: calc(100vw - #{$lem * 2});
@@ -15,35 +25,38 @@
     left: 0;
     z-index: 1;
 
-    .line {
-      animation-duration: 3s;
-      animation-direction: alternate;
-      animation-iteration-count: infinite;
-      animation-fill-mode: none;
-      animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
-    }
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
   }
 
   .line-demo--horizontal {
+    animation-name: rotate-line;
+
     .lines {
       @include lines(20);
-
-      .line {
-        animation-name: rotate-line;
-      }
     }
   }
 
   .line-demo--vertical {
     z-index: 2;
+    animation-name: skew-line;
 
     .lines {
       @include lines(30, vertical);
-
-      .line {
-        animation-name: skew-line;
-      }
     }
+  }
+}
+
+@include keyframes(scale-lines) {
+  from {
+    transform: scale(.5) rotate(360deg);
+  }
+
+  to {
+    transform: scale(1) rotate(0deg);
   }
 }
 
