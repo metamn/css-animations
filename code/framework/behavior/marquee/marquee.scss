@@ -1,6 +1,7 @@
 // A responsive marquee
 //
 // Based on http://jsfiddle.net/jonathansampson/xxuxd/
+// Uses 'text-indent' because 'transform: translateX' is simply doesn't work in this case
 //
 // $size - the width of the marquee window, preferably in 'vw' not in 'em' or 'px'
 // $length - the length of the text in chars
