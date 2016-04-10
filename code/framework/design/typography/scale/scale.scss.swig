@@ -17,6 +17,11 @@ $lem: {{ line_height }}em;
 {% endfor %}{%- endif %}{%- endfor %}
 
 
+// Scales
+{% for scale in scale %}{% set name = scale.name %}{% for property in scale.properties %}{% if property.name == 'font-size' %}{% set font_size = property.value %}{%- endif %}{%- endfor %}
+${{ name }}: {{ font_size }};
+{%- endfor %}
+
 
 // Different typographic scales
 @mixin scale($variant) {

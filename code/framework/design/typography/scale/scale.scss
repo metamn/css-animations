@@ -13,6 +13,19 @@ $lem: 1.48em;
 
 
 
+// Scales
+
+$default: 100%;
+$small-1: 0.75em;
+$large-1: 1.333em;
+$large-2: 1.777em;
+$large-3: 2.369em;
+$large-4: 3.157em;
+$large-5: 4.209em;
+$large-6: 5.61em;
+$large-7: 7.478em;
+$large-8: 9.969em;
+
 
 // Different typographic scales
 @mixin scale($variant) {

@@ -1,0 +1,58 @@
+// A responsive marquee
+//
+// Based on http://jsfiddle.net/jonathansampson/xxuxd/
+//
+// $size - the width of the marquee window
+// $length - the length of the text in chars
+// $scale - the size of the font
+// $letter-spacing - the letter spacing
+//
+// Styleguide marquee
+@mixin marquee($size, $length, $scale, $letter-spacing) {
+  width: $size;
+
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+
+  // - duration set usually together with the value 'to' from the animation
+  @include portrait {
+    animation: marquee-portrait 10s linear infinite;
+  }
+
+  @include landscape {
+    animation: marquee-landscape 20s linear infinite;
+  }
+
+}
+
+@include keyframes(marquee-portrait) {
+  from  {
+    // this must be $size (or 100% ??)
+    text-indent: 100%;
+  }
+
+  to {
+    // This must be manually adjusted based on tests
+    // - it depends on text length, font-size, and animation duration
+    text-indent: -800%;
+  }
+}
+
+
+@include keyframes(marquee-landscape) {
+  from  {
+    // this must be $size (or 100% ??)
+    text-indent: 100%;
+  }
+
+  to {
+    // This must be manually adjusted based on tests
+    // - it depends on text length, font-size, and animation duration
+    text-indent: -300%;
+  }
+}

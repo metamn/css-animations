@@ -1,0 +1,15 @@
+@mixin marquee-demo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  .marquee {
+    @include text-style(name);
+    @include scale(large-3);
+
+    @include marquee(50vw, 69, $large-3, $lem / 4);
+  }
+}
