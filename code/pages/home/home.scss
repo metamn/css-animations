@@ -6,10 +6,14 @@
 html {
   &.home {
     body {
+      .marquee {
+        @include marquee;
+      }
+      
       .skew-image {
         @include skew-image;
       }
-      
+
       .intro-inu {
         @include intro-inu;
       }

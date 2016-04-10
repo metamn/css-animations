@@ -1,0 +1,43 @@
+// - http://jsfiddle.net/jonathansampson/xxuxd/
+
+@mixin marquee {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  $size: 100vw;
+
+  &__text {
+    width: $size;
+
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    @include text-style(name);
+    @include scale(large-3);
+
+    // - duration set usually together with the value 'to' from the animation
+    animation: marquee 20s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@include keyframes(marquee) {
+  from  {
+    // this must be $size
+    text-indent: 100vw;
+  }
+
+  to {
+    // This must be manually adjusted based on tests
+    // - it depends on text length, font-size, and animation duration
+    text-indent: -150vw;
+  }
+}
