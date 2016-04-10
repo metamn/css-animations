@@ -7,10 +7,10 @@
   height: 100vh;
 
   .marquee {
-    @include text-style(name);
-    @include scale(large-6);
+    //@include text-style(name);
+    //@include scale(large-6);
+    //@include marquee(100vw, 69, $large-6, $lem / 4);
 
-    @include marquee(100vw, 69, $large-6, $lem / 4);
-    //@include marquee(100vw, 69);
+    @include marquee(60vw, 69);
   }
 }

@@ -25,24 +25,24 @@
 
   @include mobile {
     @debug(mobile 'to': -$text_size_em / 22 * $size_to_fullsize_ratio * 100);
-    animation: marquee-mobile 20s linear infinite;
+    animation: marquee-mobile 15s linear infinite;
   }
 
   @include tablet {
     // this will suggest a value to be added to 'to' in the keyframe
     @debug(tablet 'to': -$text_size_em / 48 * $size_to_fullsize_ratio * 100);
     // - duration set manually after the marquee is checked visually
-    animation: marquee-tablet 20s linear infinite;
+    animation: marquee-tablet 15s linear infinite;
   }
 
   @include laptop {
     @debug(laptop 'to': -$text_size_em / 80 * $size_to_fullsize_ratio * 100);
-    animation: marquee-laptop 20s linear infinite;
+    animation: marquee-laptop 15s linear infinite;
   }
 
   @include desktop {
     @debug(desktop 'to': -$text_size_em / 100 * $size_to_fullsize_ratio * 100);
-    animation: marquee-desktop 20s linear infinite;
+    animation: marquee-desktop 15s linear infinite;
   }
 }
 
@@ -52,7 +52,7 @@
   }
 
   to {
-    text-indent: -1880%;
+    text-indent: -550%;
   }
 }
 
@@ -63,7 +63,7 @@
   }
 
   to {
-    text-indent: -850%;
+    text-indent: -250%;
   }
 }
 
@@ -73,16 +73,16 @@
   }
 
   to {
-    text-indent: -550%;
+    text-indent: -150%;
   }
 }
 
 @include keyframes(marquee-desktop) {
   from  {
-    text-indent: 100%;
+    text-indent: 120%;
   }
 
   to {
-    text-indent: -415%;
+    text-indent: -115%;
   }
 }
