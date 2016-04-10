@@ -23,7 +23,7 @@
     &__text {
       @include text-style(title);
       @include scale(large-1);
-      //font-weight: bold;
+      font-weight: bold;
 
       transform: translateX(500%);
 
@@ -34,7 +34,7 @@
     }
 
     &__border {
-      @include border;
+      @include border(thick);
       flex-basis: 0;
 
       animation-name: line-draw-horizontal;

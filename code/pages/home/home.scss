@@ -6,6 +6,10 @@
 html {
   &.home {
     body {
+      .skew-image {
+        @include skew-image;
+      }
+      
       .intro-inu {
         @include intro-inu;
       }

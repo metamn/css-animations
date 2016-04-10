@@ -1,0 +1,32 @@
+@mixin skew-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  @include colors(white-on-blue);
+
+  .figure {
+    @include figure;
+
+    //animation-name: skew-image;
+    animation-duration: 10s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+  }
+}
+
+@include keyframes(skew-image) {
+  from {
+    transform: perspective(500px) rotateX(0deg) rotateY(0deg) scale(1);
+  }
+
+  to {
+    transform: perspective(500px) rotateX(-36deg) rotateY(-36deg) scale(.6);
+  }
+}

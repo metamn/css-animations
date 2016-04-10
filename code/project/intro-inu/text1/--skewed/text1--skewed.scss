@@ -1,3 +1,4 @@
 @mixin text1--skewed {
-  transform: translateX(-10%);
+  //transform: translateX(-10%);
+  transform: rotate(-5deg) translate(-10%);
 }
