@@ -8,8 +8,9 @@
 
   .marquee {
     @include text-style(name);
-    @include scale(large-3);
+    @include scale(large-6);
 
-    @include marquee(50vw, 69, $large-3, $lem / 4);
+    @include marquee(100vw, 69, $large-6, $lem / 4);
+    //@include marquee(100vw, 69);
   }
 }

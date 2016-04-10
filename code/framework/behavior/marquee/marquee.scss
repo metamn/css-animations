@@ -2,13 +2,13 @@
 //
 // Based on http://jsfiddle.net/jonathansampson/xxuxd/
 //
-// $size - the width of the marquee window
+// $size - the width of the marquee window, preferably in 'vw' not in 'em' or 'px'
 // $length - the length of the text in chars
 // $scale - the size of the font
 // $letter-spacing - the letter spacing
 //
 // Styleguide marquee
-@mixin marquee($size, $length, $scale, $letter-spacing) {
+@mixin marquee($size, $length, $scale: 1em, $letter-spacing: 0.01em) {
   width: $size;
 
   overflow: hidden;
@@ -19,40 +19,70 @@
     animation-play-state: paused;
   }
 
-  // - duration set usually together with the value 'to' from the animation
-  @include portrait {
-    animation: marquee-portrait 10s linear infinite;
+  // - calculating 'to' for the keyframe
+  $text_size_em: ($length * ($scale + $letter-spacing));
+  $size_to_fullsize_ratio: 100 / $size;
+
+  @include mobile {
+    @debug(mobile 'to': -$text_size_em / 22 * $size_to_fullsize_ratio * 100);
+    animation: marquee-mobile 20s linear infinite;
   }
 
-  @include landscape {
-    animation: marquee-landscape 20s linear infinite;
+  @include tablet {
+    // this will suggest a value to be added to 'to' in the keyframe
+    @debug(tablet 'to': -$text_size_em / 48 * $size_to_fullsize_ratio * 100);
+    // - duration set manually after the marquee is checked visually
+    animation: marquee-tablet 20s linear infinite;
   }
 
+  @include laptop {
+    @debug(laptop 'to': -$text_size_em / 80 * $size_to_fullsize_ratio * 100);
+    animation: marquee-laptop 20s linear infinite;
+  }
+
+  @include desktop {
+    @debug(desktop 'to': -$text_size_em / 100 * $size_to_fullsize_ratio * 100);
+    animation: marquee-desktop 20s linear infinite;
+  }
 }
 
-@include keyframes(marquee-portrait) {
+@include keyframes(marquee-mobile) {
   from  {
-    // this must be $size (or 100% ??)
     text-indent: 100%;
   }
 
   to {
-    // This must be manually adjusted based on tests
-    // - it depends on text length, font-size, and animation duration
-    text-indent: -800%;
+    text-indent: -1880%;
   }
 }
 
 
-@include keyframes(marquee-landscape) {
+@include keyframes(marquee-tablet) {
   from  {
-    // this must be $size (or 100% ??)
     text-indent: 100%;
   }
 
   to {
-    // This must be manually adjusted based on tests
-    // - it depends on text length, font-size, and animation duration
-    text-indent: -300%;
+    text-indent: -850%;
+  }
+}
+
+@include keyframes(marquee-laptop) {
+  from  {
+    text-indent: 100%;
+  }
+
+  to {
+    text-indent: -550%;
+  }
+}
+
+@include keyframes(marquee-desktop) {
+  from  {
+    text-indent: 100%;
+  }
+
+  to {
+    text-indent: -415%;
   }
 }
