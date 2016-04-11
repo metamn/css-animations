@@ -3,13 +3,16 @@
 // Based on http://jsfiddle.net/jonathansampson/xxuxd/
 // Uses 'text-indent' because 'transform: translateX' is simply doesn't work in this case
 //
+//
 // $size - the width of the marquee window, preferably in 'vw' not in 'em' or 'px'
 // $length - the length of the text in chars
 // $scale - the size of the font
 // $letter-spacing - the letter spacing
+// $keyframe - the name of the keyframe animation associated to this marquee
+// $debug - to display the hint for keyframes' 'to' value or not
 //
 // Styleguide marquee
-@mixin marquee($size, $length, $scale: 1em, $letter-spacing: 0.01em) {
+@mixin marquee($size, $length, $keyframe, $debug: on, $scale: 1em, $letter-spacing: 0.01em) {
   width: $size;
 
   overflow: hidden;
@@ -24,66 +27,77 @@
   $text_size_em: ($length * ($scale + $letter-spacing));
   $size_to_fullsize_ratio: 100 / $size;
 
+
   @include mobile {
-    @debug(mobile 'to': -$text_size_em / 22 * $size_to_fullsize_ratio * 100);
-    animation: marquee-mobile 15s linear infinite;
+    @if ($debug == on ) {
+      @debug(mobile 'to': -$text_size_em / 22 * $size_to_fullsize_ratio * 100);
+    }
+    animation: #{$keyframe}-mobile 15s linear infinite;
   }
 
   @include tablet {
-    // this will suggest a value to be added to 'to' in the keyframe
-    @debug(tablet 'to': -$text_size_em / 48 * $size_to_fullsize_ratio * 100);
-    // - duration set manually after the marquee is checked visually
-    animation: marquee-tablet 15s linear infinite;
+    @if ($debug == on ) {
+      @debug(tablet 'to': -$text_size_em / 48 * $size_to_fullsize_ratio * 100);
+    }
+    animation: #{$keyframe}-tablet 15s linear infinite;
   }
 
   @include laptop {
-    @debug(laptop 'to': -$text_size_em / 80 * $size_to_fullsize_ratio * 100);
-    animation: marquee-laptop 15s linear infinite;
+    @if ($debug == on ) {
+      @debug(laptop 'to': -$text_size_em / 80 * $size_to_fullsize_ratio * 100);
+    }
+    animation: #{$keyframe}-laptop 15s linear infinite;
   }
 
   @include desktop {
-    @debug(desktop 'to': -$text_size_em / 100 * $size_to_fullsize_ratio * 100);
-    animation: marquee-desktop 15s linear infinite;
+    @if ($debug == on ) {
+      @debug(desktop 'to': -$text_size_em / 100 * $size_to_fullsize_ratio * 100);
+    }
+    animation: #{$keyframe}-desktop 20s linear infinite;
   }
 }
 
-@include keyframes(marquee-mobile) {
+
+
+// - this code must be inserted where the @include marquee(...) is
+// - the keyframe name must be set to $keyframe
+// - the 'to' value must be set as suggested by the @debug
+@include keyframes(marquee-demo-mobile) {
   from  {
     text-indent: 100%;
   }
 
   to {
-    text-indent: -550%;
+    text-indent: -1875%;
   }
 }
 
-
-@include keyframes(marquee-tablet) {
+@include keyframes(marquee-demo-tablet) {
   from  {
     text-indent: 100%;
   }
 
   to {
-    text-indent: -250%;
+    text-indent: -850%;
   }
 }
 
-@include keyframes(marquee-laptop) {
+@include keyframes(marquee-demo-laptop) {
   from  {
     text-indent: 100%;
   }
 
   to {
-    text-indent: -150%;
+    text-indent: -515%;
   }
 }
 
-@include keyframes(marquee-desktop) {
+@include keyframes(marquee-demo-desktop) {
   from  {
     text-indent: 120%;
   }
 
   to {
-    text-indent: -115%;
+    text-indent: -415%;
   }
 }

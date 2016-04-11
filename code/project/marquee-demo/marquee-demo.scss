@@ -7,10 +7,98 @@
   height: 100vh;
 
   .marquee {
-    //@include text-style(name);
-    //@include scale(large-6);
-    //@include marquee(100vw, 69, $large-6, $lem / 4);
+    @include text-style(name);
+    @include scale(large-6);
+    @include marquee(100vw, 69, marquee-demo-large, on, $large-6, $lem / 4);
 
-    @include marquee(60vw, 69);
+    //@include marquee(60vw, 69, marquee-demo-small);
+  }
+}
+
+
+
+@include keyframes(marquee-demo-large-mobile) {
+  from  {
+    text-indent: 100%;
+  }
+
+  to {
+    text-indent: -1875%;
+  }
+}
+
+@include keyframes(marquee-demo-large-tablet) {
+  from  {
+    text-indent: 100%;
+  }
+
+  to {
+    text-indent: -850%;
+  }
+}
+
+@include keyframes(marquee-demo-large-laptop) {
+  from  {
+    text-indent: 100%;
+  }
+
+  to {
+    text-indent: -515%;
+  }
+}
+
+@include keyframes(marquee-demo-large-desktop) {
+  from  {
+    text-indent: 120%;
+  }
+
+  to {
+    text-indent: -415%;
+  }
+}
+
+
+
+
+
+
+@include keyframes(marquee-demo-small-mobile) {
+  from  {
+    text-indent: 100%;
+  }
+
+  to {
+    text-indent: -550%;
+  }
+}
+
+
+@include keyframes(marquee-demo-small-tablet) {
+  from  {
+    text-indent: 100%;
+  }
+
+  to {
+    text-indent: -250%;
+  }
+}
+
+@include keyframes(marquee-demo-small-laptop) {
+  from  {
+    text-indent: 100%;
+  }
+
+  to {
+    text-indent: -150%;
+  }
+}
+
+@include keyframes(marquee-demo-small-desktop) {
+  from  {
+    text-indent: 120%;
+  }
+
+  to {
+    text-indent: -115%;
   }
 }
