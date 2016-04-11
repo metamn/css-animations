@@ -1,0 +1,49 @@
+@mixin fuzzy-text($width, $height) {
+  animation: fuzzy-text 5s linear infinite;
+}
+
+@include keyframes(fuzzy-text) {
+  0% {
+    transform: translate(5vw, -.5vh);
+  }
+
+  10% {
+    transform: translate(-4vw, 2.5vh);
+  }
+
+  20% {
+    transform: translate(3vw, 0);
+  }
+
+  30% {
+    transform: translate(-2vw, -3vh);
+  }
+
+  40% {
+    transform: translate(0vw, -4.5vh);
+  }
+
+  50% {
+    transform: translate(5vw, .5vh);
+  }
+
+  60% {
+    transform: translate(-3vw, 2vh);
+  }
+
+  70% {
+    transform: translate(1vw, 2vh);
+  }
+
+  80% {
+    transform: translate(-3vw, 0vh);
+  }
+
+  90% {
+    transform: translate(-4vw, -1vh);
+  }
+
+  100% {
+    transform: translate(3vw, -3vh);
+  }
+}

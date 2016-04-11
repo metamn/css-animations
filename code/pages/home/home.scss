@@ -6,6 +6,10 @@
 html {
   &.home {
     body {
+      .fuzzy-text-demo {
+        @include fuzzy-text-demo;
+      }
+      
       .marquee-demo {
         @include marquee-demo;
       }

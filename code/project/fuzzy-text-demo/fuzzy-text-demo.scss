@@ -1,0 +1,17 @@
+@mixin fuzzy-text-demo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  .fuzzy-text {
+    max-width: 15em;
+
+    @include text-style(name);
+    @include scale(large-3);
+
+    @include fuzzy-text(40vw, 30vh);
+  }
+}

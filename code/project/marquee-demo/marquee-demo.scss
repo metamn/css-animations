@@ -9,7 +9,7 @@
   .marquee {
     @include text-style(name);
     @include scale(large-6);
-    @include marquee(100vw, 69, marquee-demo-large, on, $large-6, $lem / 4);
+    @include marquee(100vw, 69, marquee-demo-large, off, $large-6, $lem / 4);
 
     //@include marquee(60vw, 69, marquee-demo-small);
   }
