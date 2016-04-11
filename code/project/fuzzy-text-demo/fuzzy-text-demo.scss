@@ -10,7 +10,7 @@
     max-width: 15em;
 
     @include text-style(name);
-    @include scale(large-3);
+    @include scale(large-6);
 
     @include fuzzy-text(40vw, 30vh);
   }
