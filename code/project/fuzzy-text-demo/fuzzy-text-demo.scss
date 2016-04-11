@@ -12,6 +12,6 @@
     @include text-style(name);
     @include scale(large-4);
 
-    @include fuzzy-text(40vw, 30vh);
+    @include fuzzy-text;
   }
 }

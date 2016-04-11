@@ -6,10 +6,14 @@
 html {
   &.home {
     body {
+      .border-draw-demo {
+        @include border-draw-demo;
+      }
+
       .fuzzy-text-demo {
         @include fuzzy-text-demo;
       }
-      
+
       .marquee-demo {
         @include marquee-demo;
       }

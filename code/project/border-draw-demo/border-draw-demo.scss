@@ -1,0 +1,21 @@
+@mixin border-draw-demo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  .border-draw {
+    //@include circle(30vw);
+    //@include border-draw(circle);
+
+    //width: 10em;
+    //height: 10em;
+    //@include border-draw(square);
+
+    width: 60em;
+    height: 40em;
+    @include border-draw(rectangle, 1s);
+  }
+}

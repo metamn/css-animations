@@ -14,6 +14,7 @@
   animation-name: $keyframe;
   animation-duration: $duration;
   animation-direction: $direction;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
 
   @if ($continuous != false) {
     animation-iteration-count: infinite;

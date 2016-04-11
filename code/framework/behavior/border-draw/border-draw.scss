@@ -1,0 +1,100 @@
+// Border draw
+//
+// Animation duration depends on the size of the object; it must be manually adjusted
+// On rectangles the keyframes must be organized according to the rectangle width and height
+//
+// Styleguide border-draw
+@mixin border-draw($type, $duration: .3s) {
+  border: 1px solid transparent;
+
+  animation-duration: $duration;
+  animation-fill-mode: forwards;
+
+  @if ($type == circle) {
+    animation-name: border-draw-square;
+  }
+
+  @if ($type == square) {
+    animation-name: border-draw-square;
+  }
+
+  @if ($type == rectangle) {
+    animation-name: border-draw-rectangle;
+  }
+}
+
+@include keyframes(border-draw-rectangle) {
+  0% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  30% {
+    border-top-color: black;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  50% {
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  80% {
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-left-color: transparent;
+  }
+
+  100% {
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-left-color: black;
+  }
+}
+
+
+
+@include keyframes(border-draw-square) {
+  0% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  25% {
+    border-top-color: black;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  50% {
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  75% {
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-left-color: transparent;
+  }
+
+  100% {
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-left-color: black;
+  }
+}
