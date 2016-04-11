@@ -7,10 +7,10 @@
   height: 100vh;
 
   .fuzzy-text {
-    max-width: 15em;
+    max-width: 12.5em;
 
     @include text-style(name);
-    @include scale(large-6);
+    @include scale(large-4);
 
     @include fuzzy-text(40vw, 30vh);
   }
